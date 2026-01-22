@@ -1,13 +1,6 @@
 #!/usr/bin/env python
 """
-Main experiment script for comprehensive SMB study.
 
-Trains a larger GRU network on nested sequences and runs
-the full analysis suite to test predictions from:
-- Xie et al. (2022) - Subspace geometry
-- El-Gaby et al. (2024) - Goal-progress cells
-- Jensen et al. (2025) - Spacetime attractors
-- Whittington et al. (2024) - Activity slots
 """
 
 import argparse

@@ -1,13 +1,6 @@
 #!/usr/bin/env python
 """
-Publication-quality figures for Nature-style presentation.
 
-Design principles:
-- Clean, minimalist aesthetic
-- Sophisticated color palette
-- Clear visual hierarchy
-- Proper typography
-- Multi-panel layouts with clear labeling
 """
 
 import numpy as np
@@ -235,7 +228,7 @@ def figure1_task_overview(save_path):
     add_panel_label(ax_d, 'd')
 
     frameworks = [
-        ('Activity Slots\n(Whittington)', 'Reusable\nscaffold', COLORS['accent2']),
+        ('Activity Slots\n(Whittington)', '', COLORS['accent2']),
         ('Spacetime\nAttractors\n(Jensen)', 'Continuous\nconveyor', COLORS['secondary']),
         ('Memory\nBuffers\n(El-Gaby)', 'Structure-\nspecific', COLORS['accent1']),
     ]

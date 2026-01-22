@@ -1,23 +1,5 @@
 """
-Comprehensive analysis suite for testing structured memory buffer (SMB),
-spacetime attractor, and slot dynamics theories in RNNs trained on nested sequences.
 
-Based on theoretical frameworks from:
-- Xie et al. (2022, Science) - Subspace geometry of sequence memory
-- El-Gaby et al. (2024, Nature) - Goal-progress cells, memory buffers
-- Jensen et al. (2025, bioRxiv) - Spacetime attractor theory
-- Whittington et al. (2024, Neuron) - Activity slots, EM-WM duality
-- Liu et al. (2024, bioRxiv) - 2D neural geometry for hierarchical sequences
-
-Analysis categories:
-1. Subspace Geometry (Xie et al.)
-2. Position/Item Decoding
-3. Future Coding & Conveyor Belt (Jensen et al.)
-4. Goal-Progress Tiling (El-Gaby et al.)
-5. Slot Dynamics & Cross-Generalization (Whittington et al.)
-6. Attractor Dynamics
-7. Connectivity Analysis
-8. Representational Similarity Analysis
 """
 
 import numpy as np
@@ -486,12 +468,6 @@ def slot_dynamics_analysis(
     infos: List,
 ) -> Dict:
     """
-    Test for activity slot properties following Whittington et al. (2024).
-
-    Tests:
-    1. Position invariance: Does position decoding generalize across items?
-    2. Content-structure separation: Are item and position in separable subspaces?
-    3. Controllable subspaces: Can position/item be independently manipulated?
     """
     n_trials = len(infos)
 
@@ -604,10 +580,7 @@ def cross_sequence_generalization(
     device: str = 'cpu',
 ) -> Dict:
     """
-    Test if structural representations generalize across sequence types.
 
-    Train position decoder on one sequence type, test on another.
-    High transfer suggests shared structural scaffold.
     """
     from task import SequenceType
 
@@ -684,12 +657,6 @@ def attractor_dynamics_analysis(
     device: str = 'cpu',
 ) -> Dict:
     """
-    Test for attractor-like dynamics during delay period.
-
-    Following Jensen et al., tests:
-    1. Stability: Low variance during delay
-    2. Distinctiveness: High variance across trials
-    3. Discrete states: Clustering of delay activity
     """
     from task import SequenceType
     from sklearn.cluster import KMeans
@@ -762,9 +729,7 @@ def attractor_dynamics_analysis(
 
 def connectivity_analysis(model) -> Dict:
     """
-    Analyze structure in recurrent connectivity.
 
-    Tests whether task structure is embedded in weights.
     """
     model.eval()
 
@@ -894,14 +859,14 @@ def run_comprehensive_analysis(
     device: str = 'cpu',
 ) -> Dict:
     """
-    Run all analyses and return comprehensive results.
+
     """
     from task import SequenceType
 
     model.eval()
     model = model.to(device)
 
-    print("Running comprehensive SMB analysis suite...")
+    print("Running...")
     results = {}
 
     # Generate data for each sequence type
@@ -945,15 +910,15 @@ def run_comprehensive_analysis(
             data_by_type[seq_type.value]['infos'],
         )
 
-    # 3. Future coding (Jensen et al.)
+    # 3. Future coding 
     print("  3. Running future coding analysis...")
     results['future_coding'] = future_coding_analysis(model, task, n_trials=n_trials, device=device)
 
-    # 4. Goal-progress tiling (El-Gaby et al.)
+    # 4. Goal-progress tiling 
     print("  4. Running goal-progress tiling analysis...")
     results['goal_progress'] = goal_progress_tiling_analysis(model, task, n_trials=n_trials, device=device)
 
-    # 5. Slot dynamics (Whittington et al.)
+    # 5. Slot dynamics 
     print("  5. Running slot dynamics analysis...")
     results['slot_dynamics'] = {}
     for seq_type in SequenceType:

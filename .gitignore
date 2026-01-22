@@ -6,3 +6,4 @@ paper/*
 .vscode/
 .idea/
 __pycache__/
+graphical_abstract.py

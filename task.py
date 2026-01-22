@@ -6,9 +6,7 @@ Implements three sequence types:
 - Flat repeat (ABCDABCD): Repetition without nesting
 - Unique (EFGHIJKL): No repetition structure
 
-Based on:
-- Xie et al. (2022, Science) - Sequence geometry in PFC
-- Liu et al. (2024, bioRxiv) - 2D neural geometry for hierarchical sequences
+
 """
 
 import numpy as np

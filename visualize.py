@@ -1,11 +1,5 @@
 """
-Visualization functions for SMB nested sequence analysis.
 
-Generates publication-quality figures testing predictions from:
-- Xie et al. (2022) - Subspace geometry
-- El-Gaby et al. (2024) - Goal-progress cells
-- Jensen et al. (2025) - Spacetime attractors
-- Whittington et al. (2024) - Activity slots
 """
 
 import numpy as np
