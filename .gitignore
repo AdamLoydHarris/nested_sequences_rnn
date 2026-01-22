@@ -2,6 +2,7 @@ from_overleaf/*
 paper/*
 
 .DS_Store
+figures/*
 
 .vscode/
 .idea/
