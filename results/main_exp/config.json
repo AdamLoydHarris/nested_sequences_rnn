@@ -1,0 +1,17 @@
+{
+  "hidden_dim": 256,
+  "model_type": "gru",
+  "n_layers": 1,
+  "n_stimuli": 16,
+  "n_epochs": 5000,
+  "batch_size": 64,
+  "learning_rate": 0.001,
+  "weight_decay": 1e-05,
+  "eval_every": 100,
+  "n_analysis_trials": 500,
+  "save_dir": "results/main_exp",
+  "seed": 42,
+  "device": "cpu",
+  "analyze_only": null,
+  "skip_training": false
+}
